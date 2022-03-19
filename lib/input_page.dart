@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 const bottomContainerHeight = 80.0;
 const activeCardColour = Color(0xFF1D1E33);
 const bottomContainerColour = Color(0xFFEB1555);
 
 class ReusableCard extends StatelessWidget {
-  ReusableCard({required this.colour});
+  ReusableCard({required this.colour, required this.cardChild});
   final Color colour;
-
+  final Widget cardChild;
   @override
   Widget build(BuildContext context) {
     return Container(
+      child: cardChild,
       margin: EdgeInsets.all(15),
       decoration: BoxDecoration(
         color: colour,
@@ -45,10 +47,16 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(colour: activeCardColour),
+                  child: ReusableCard(
+                    colour: activeCardColour,
+                    cardChild: null,
+                  ),
                 ),
                 Expanded(
-                  child: ReusableCard(colour: activeCardColour),
+                  child: ReusableCard(
+                    colour: activeCardColour,
+                    cardChild: null,
+                  ),
                 )
               ],
             ),
@@ -57,7 +65,10 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(colour: activeCardColour),
+                  child: ReusableCard(
+                    colour: activeCardColour,
+                    cardChild: null,
+                  ),
                 ),
               ],
             ),
@@ -66,10 +77,16 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(colour: activeCardColour),
+                  child: ReusableCard(
+                    colour: activeCardColour,
+                    cardChild: null,
+                  ),
                 ),
                 Expanded(
-                  child: ReusableCard(colour: activeCardColour),
+                  child: ReusableCard(
+                    colour: activeCardColour,
+                    cardChild: null,
+                  ),
                 )
               ],
             ),
