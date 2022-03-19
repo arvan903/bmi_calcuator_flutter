@@ -7,10 +7,7 @@ const bottomContainerHeight = 80.0;
 const activeCardColour = Color(0xFF1D1E33);
 const inActiveCardColour = Color(0xFF111328);
 const bottomContainerColour = Color(0xFFEB1555);
-enum GenderType {
-  male,
-  female,
-}
+enum GenderType { male, female }
 
 class InputPage extends StatefulWidget {
   const InputPage({Key? key}) : super(key: key);
