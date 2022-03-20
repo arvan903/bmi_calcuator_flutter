@@ -18,6 +18,7 @@ class _InputPageState extends State<InputPage> {
   GenderType selectedGender = GenderType.male;
 
   int height = 180;
+  int weight = 60;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,11 +123,50 @@ class _InputPageState extends State<InputPage> {
           )),
           Expanded(
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+              // crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Expanded(
                   child: ReusableCard(
-                      colour: kActiveCardColour, cardChild: Text('hi')),
+                    colour: kActiveCardColour,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Weight',
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                          weight.toString(),
+                          style: kNumberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundIconButton(
+                                icon: FontAwesomeIcons.minus,
+                                onPressed: () {
+                                  setState(() {
+                                    weight--;
+                                    print('hello-');
+                                  });
+                                }),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: () {
+                                setState(() {
+                                  weight++;
+                                  print('hello+');
+                                });
+                              },
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
                 ),
                 Expanded(
                   child: ReusableCard(
@@ -143,6 +183,32 @@ class _InputPageState extends State<InputPage> {
           )
         ],
       ),
+    );
+  }
+}
+
+class RoundIconButton extends StatelessWidget {
+  const RoundIconButton({Key? key, required this.icon, required this.onPressed})
+      : super(key: key);
+  final IconData icon;
+  final Function onPressed;
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      onPressed: () {
+        onPressed;
+      },
+      child: Icon(icon),
+      elevation: 6.0,
+      constraints: BoxConstraints.tightFor(
+        width: 56.0,
+        height: 56.0,
+      ),
+      fillColor: Color(0xFF4C4F5E),
+      shape: CircleBorder(),
+      // shape: RoundedRectangleBorder(
+      //   borderRadius: BorderRadius.circular(10.0),
+      // ),
     );
   }
 }
