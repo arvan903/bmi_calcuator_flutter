@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'reusable_card.dart';
-import 'icon_content.dart';
+import '../components/reusable_card.dart';
+import '../components/icon_content.dart';
 
 import 'constants.dart';
 
@@ -253,11 +252,12 @@ class _InputPageState extends State<InputPage> {
               child: Center(
                 child: Text(
                   'Calculate',
-                  style: kNumberTextStyle,
+                  style: kLargebuttonTextStyle,
                 ),
               ),
               color: kBottomContainerColour,
               margin: EdgeInsets.only(top: 10),
+              padding: EdgeInsets.only(bottom: 20.0),
               width: double.infinity,
               height: kBottomContainerHeight,
             ),
