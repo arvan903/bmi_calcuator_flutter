@@ -19,6 +19,7 @@ class _InputPageState extends State<InputPage> {
 
   int height = 180;
   int weight = 60;
+  int age = 20;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,7 +124,7 @@ class _InputPageState extends State<InputPage> {
           )),
           Expanded(
             child: Row(
-              // crossAxisAlignment: CrossAxisAlignment.stretch,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Expanded(
                   child: ReusableCard(
@@ -132,35 +133,56 @@ class _InputPageState extends State<InputPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Weight',
+                          'WEIGHT',
                           style: kLabelTextStyle,
                         ),
-                        Text(
-                          weight.toString(),
-                          style: kNumberTextStyle,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          textBaseline: TextBaseline.alphabetic,
+                          children: [
+                            Text(weight.toString(), style: kNumberTextStyle),
+                            Text(
+                              'kg'.toString(),
+                              style: kLabelTextStyle,
+                            ),
+                          ],
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            RoundIconButton(
-                                icon: FontAwesomeIcons.minus,
-                                onPressed: () {
-                                  setState(() {
-                                    weight--;
-                                    print('hello-');
-                                  });
-                                }),
+                            TextButton(
+                              style: TextButton.styleFrom(
+                                backgroundColor: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  weight--;
+                                });
+                              },
+                              child: Icon(
+                                FontAwesomeIcons.minus,
+                              ),
+                            ),
                             SizedBox(
                               width: 10.0,
                             ),
-                            RoundIconButton(
-                              icon: FontAwesomeIcons.plus,
+                            TextButton(
                               onPressed: () {
                                 setState(() {
                                   weight++;
-                                  print('hello+');
                                 });
                               },
+                              child: Icon(FontAwesomeIcons.plus),
+                              style: TextButton.styleFrom(
+                                backgroundColor: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
                             ),
                           ],
                         )
@@ -170,7 +192,54 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: ReusableCard(
-                      colour: kActiveCardColour, cardChild: Text('hi')),
+                    colour: kActiveCardColour,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'AGE',
+                          style: kLabelTextStyle,
+                        ),
+                        Text(age.toString(), style: kNumberTextStyle),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            TextButton(
+                              style: TextButton.styleFrom(
+                                  backgroundColor: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10))),
+                              onPressed: () {
+                                setState(() {
+                                  age--;
+                                });
+                              },
+                              child: Icon(
+                                FontAwesomeIcons.minus,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  age++;
+                                });
+                              },
+                              child: Icon(FontAwesomeIcons.plus),
+                              style: TextButton.styleFrom(
+                                backgroundColor: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
                 )
               ],
             ),
@@ -187,28 +256,22 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
-class RoundIconButton extends StatelessWidget {
-  const RoundIconButton({Key? key, required this.icon, required this.onPressed})
-      : super(key: key);
-  final IconData icon;
-  final Function onPressed;
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      onPressed: () {
-        onPressed;
-      },
-      child: Icon(icon),
-      elevation: 6.0,
-      constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
-      ),
-      fillColor: Color(0xFF4C4F5E),
-      shape: CircleBorder(),
-      // shape: RoundedRectangleBorder(
-      //   borderRadius: BorderRadius.circular(10.0),
-      // ),
-    );
-  }
-}
+// class RoundIconButton extends StatelessWidget {
+//   const RoundIconButton({Key? key, required this.icon, required this.onPressed})
+//       : super(key: key);
+//   final IconData icon;
+//   final Function onPressed;
+//   @override
+//   Widget build(BuildContext context) {
+//     return TextButton(
+//       on
+//       child: Icon(icon),
+//       style: TextButton.styleFrom(
+//         shape: RoundedRectangleBorder(
+//           borderRadius: BorderRadius.circular(10),
+//         ),
+//         backgroundColor: Colors.white,
+//       ),
+//     );
+//   }
+// }
