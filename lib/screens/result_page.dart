@@ -57,7 +57,7 @@ class ResultsPage extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, 'InputPage');
+                        Navigator.pop(context);
                       },
                       child: Container(
                         child: Center(
