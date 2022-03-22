@@ -1,7 +1,9 @@
+import 'package:bmi_calcuator_flutter/screens/result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../components/reusable_card.dart';
 import '../components/icon_content.dart';
+import 'package:bmi_calcuator_flutter/calculator_brain.dart';
 
 import 'constants.dart';
 
@@ -20,6 +22,8 @@ class _InputPageState extends State<InputPage> {
   int height = 180;
   int weight = 60;
   int age = 20;
+
+  get calc => null;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -246,7 +250,17 @@ class _InputPageState extends State<InputPage> {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, 'ResultPage');
+              CalculatorBrain calc = CalculatorBrain(height, weight);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultsPage(
+                    bmiResult: calc.calculateBMI(),
+                    resultText: calc.getResult(),
+                    interpretation: calc.getInterpretation(),
+                  ),
+                ),
+              );
             },
             child: Container(
               child: Center(
