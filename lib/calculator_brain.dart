@@ -13,22 +13,26 @@ class CalculatorBrain {
   }
 
   String getResult() {
-    if (_bmi >= 25) {
+    if (_bmi >= 30) {
+      return 'Obese';
+    } else if (_bmi >= 25) {
       return 'Overweight';
-    } else if (_bmi > 18.5) {
-      return 'Normal';
+    } else if (_bmi >= 18.5) {
+      return 'Normal or Healthy Weight';
     } else {
       return 'Underweight';
     }
   }
 
   String getInterpretation() {
-    if (_bmi >= 25) {
-      return 'You have a Higher than normal body Weight. Try to Exercise more.';
-    } else if (_bmi > 18.5) {
-      return 'You have a normal body weight. Good Job!';
+    if (_bmi >= 30) {
+      return 'You are heavily overweight. Your health may be at risk if you do not lose weight. You are recommended to talk to your doctor or a dietitian for advice';
+    } else if (_bmi >= 25) {
+      return 'You are slightly overweight., You may be advised to lose some weight for health reasons. You are recommended to talk to your doctor for dietitian for advice';
+    } else if (_bmi >= 18.5) {
+      return 'You are at a healthy weight for your height. by maintaining a healthy weight, you lower your risk of developing serous health problem';
     } else {
-      return 'You have a lower than normal body weight. you can eat a bit more.';
+      return 'You are underweight. You may need to put on some weight. You are recommended to ask your doctor or a dietitian for advice';
     }
   }
 }
