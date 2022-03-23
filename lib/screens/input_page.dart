@@ -2,7 +2,6 @@ import 'package:bmi_calcuator_flutter/screens/result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bmi_calcuator_flutter/calculator_brain.dart';
-
 import '../design/constants.dart';
 import '../design/icon_content.dart';
 import '../design/reusable_card.dart';
@@ -30,7 +29,7 @@ class _InputPageState extends State<InputPage> {
       appBar: AppBar(
         title: Center(
           child: Text(
-            'BMI CalCulator',
+            'BMI Calculator',
             style: TextStyle(fontFamily: 'Georgia'),
           ),
         ),
@@ -281,23 +280,3 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
-
-// class RoundIconButton extends StatelessWidget {
-//   const RoundIconButton({Key? key, required this.icon, required this.onPressed})
-//       : super(key: key);
-//   final IconData icon;
-//   final Function onPressed;
-//   @override
-//   Widget build(BuildContext context) {
-//     return TextButton(
-//       on
-//       child: Icon(icon),
-//       style: TextButton.styleFrom(
-//         shape: RoundedRectangleBorder(
-//           borderRadius: BorderRadius.circular(10),
-//         ),
-//         backgroundColor: Colors.white,
-//       ),
-//     );
-//   }
-// }

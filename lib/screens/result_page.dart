@@ -63,7 +63,7 @@ class ResultsPage extends StatelessWidget {
                       child: Container(
                         child: Center(
                           child: Text(
-                            'Re Calclulate',
+                            'Re Calculate',
                             style: kLargebuttonTextStyle,
                           ),
                         ),
