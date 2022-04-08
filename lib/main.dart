@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'screens/input_page.dart';
 
 void main() {
-  runApp(BMICalcuator());
+  runApp(const BMICalcuator());
 }
 
 class BMICalcuator extends StatelessWidget {
@@ -13,13 +13,14 @@ class BMICalcuator extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: Color(0xFF0A0E21),
+        scaffoldBackgroundColor: const Color(0xFF0A0E21),
         colorScheme: ColorScheme.fromSwatch().copyWith(
-            primary: Color(0xFF0A0E21), secondary: Colors.purple.shade900),
+            primary: const Color(0xFF0A0E21),
+            secondary: Colors.purple.shade900),
       ),
       initialRoute: 'InputPage',
       routes: {
-        'InputPage': (context) => InputPage(),
+        'InputPage': (context) => const InputPage(),
       },
     );
   }

@@ -27,7 +27,7 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+        title: const Center(
           child: Text(
             'BMI Calculator',
             style: TextStyle(fontFamily: 'Georgia'),
@@ -85,7 +85,7 @@ class _InputPageState extends State<InputPage> {
             cardChild: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'HEIGHT',
                   style: kLabelTextStyle,
                 ),
@@ -103,14 +103,14 @@ class _InputPageState extends State<InputPage> {
                 ),
                 SliderTheme(
                   data: SliderTheme.of(context).copyWith(
-                      inactiveTrackColor: Color(0xFF8D8E98),
+                      inactiveTrackColor: const Color(0xFF8D8E98),
                       thumbShape:
-                          RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                          const RoundSliderThumbShape(enabledThumbRadius: 15.0),
                       overlayShape:
-                          RoundSliderOverlayShape(overlayRadius: 30.0),
-                      thumbColor: Color(0xFFEB1555),
+                          const RoundSliderOverlayShape(overlayRadius: 30.0),
+                      thumbColor: const Color(0xFFEB1555),
                       activeTrackColor: Colors.white,
-                      overlayColor: Color(0x29EB1555)),
+                      overlayColor: const Color(0x29EB1555)),
                   child: Slider(
                     value: height.toDouble(),
                     min: 120.0,
@@ -135,7 +135,7 @@ class _InputPageState extends State<InputPage> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           'WEIGHT',
                           style: kLabelTextStyle,
                         ),
@@ -166,11 +166,11 @@ class _InputPageState extends State<InputPage> {
                                   weight--;
                                 });
                               },
-                              child: Icon(
+                              child: const Icon(
                                 FontAwesomeIcons.minus,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10.0,
                             ),
                             TextButton(
@@ -179,7 +179,7 @@ class _InputPageState extends State<InputPage> {
                                   weight++;
                                 });
                               },
-                              child: Icon(FontAwesomeIcons.plus),
+                              child: const Icon(FontAwesomeIcons.plus),
                               style: TextButton.styleFrom(
                                 backgroundColor: Colors.white,
                                 shape: RoundedRectangleBorder(
@@ -199,7 +199,7 @@ class _InputPageState extends State<InputPage> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           'AGE',
                           style: kLabelTextStyle,
                         ),
@@ -217,11 +217,11 @@ class _InputPageState extends State<InputPage> {
                                   age--;
                                 });
                               },
-                              child: Icon(
+                              child: const Icon(
                                 FontAwesomeIcons.minus,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10.0,
                             ),
                             TextButton(
@@ -230,7 +230,7 @@ class _InputPageState extends State<InputPage> {
                                   age++;
                                 });
                               },
-                              child: Icon(FontAwesomeIcons.plus),
+                              child: const Icon(FontAwesomeIcons.plus),
                               style: TextButton.styleFrom(
                                 backgroundColor: Colors.white,
                                 shape: RoundedRectangleBorder(
@@ -262,15 +262,15 @@ class _InputPageState extends State<InputPage> {
               );
             },
             child: Container(
-              child: Center(
+              child: const Center(
                 child: Text(
                   'Calculate',
                   style: kLargebuttonTextStyle,
                 ),
               ),
               color: kBottomContainerColour,
-              margin: EdgeInsets.only(top: 10),
-              padding: EdgeInsets.only(bottom: 20.0),
+              margin: const EdgeInsets.only(top: 10),
+              padding: const EdgeInsets.only(bottom: 20.0),
               width: double.infinity,
               height: kBottomContainerHeight,
             ),
